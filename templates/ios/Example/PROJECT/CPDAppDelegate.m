@@ -7,31 +7,12 @@
 //
 
 #import "CPDAppDelegate.h"
-#import <CustomApplication/CustomApplication.h>
 
 @implementation CPDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    CustomApplication *instance = CustomApplication.sharedInstance;
-    BOOL result = [instance application:application didFinishLaunchingWithOptions:launchOptions];
-    if (instance.window) self.window = instance.window;
-
-    return result;
+    return YES;
 }
-
-#pragma mark - Forward
-
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    id instance = CustomApplication.sharedInstance;
-    if ([instance respondsToSelector:aSelector]) return instance;
-
-    return nil;
-}
-
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return [super respondsToSelector:aSelector] || [CustomApplication.sharedInstance respondsToSelector:aSelector];
-}
-
 
 @end
