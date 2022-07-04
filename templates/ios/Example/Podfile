@@ -1,0 +1,20 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+def need_modules
+  pod '${POD_NAME}', :path => '../'
+end
+
+target '${POD_NAME}_Example' do
+  need_modules
+  target '${POD_NAME}_Tests' do
+    inherit! :search_paths
+
+    ${INCLUDED_PODS}
+  end
+end
+
+
+
+

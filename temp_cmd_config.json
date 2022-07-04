@@ -1,0 +1,6 @@
+{
+  "need_demo_app": true,
+  "testing_frameworks": "None",
+  "view_based_testing": false,
+  "objc_prefix": "NN"
+}
